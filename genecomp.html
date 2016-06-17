@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+<body>
+	<h1>GenBank vs. Glimmer3.02 Gene Comparison (Acc # AB011549.2)</h1>
+	<p>
+		Reference Genes Count: {{ refGene }}
+	</p>
+	<p>
+		Predicted Genes Count: {{ predGene }}
+	</p>
+	<p>
+		Exact Match Count: {{ exactMatch }}
+	</p>
+	<p>
+		5' Only Agreement Match Count: {{ fiveMatch }}
+	</p>
+	<p>
+		3' Only Agreement Match Count: {{ threeMatch }}
+	</p>
+	<p>
+		No Overlap Between Reference and Predicted Gene Count: {{ noOverlap }}
+	</p>
+	<br>
+	<p>
+		GENE COORDINATE COMPARISON TABLE (dashes indicate no overlap)
+	</p>
+	<!-- Starting our table here -->
+	<table>
+		<tr>
+          <td><b>GenBank Protein ID</b></td>
+          <td><b>5' Gene Start</b></td>
+          <td><b>3' Gene End</b></td>
+          <td><b>Glimmer ORF ID</b></td>
+          <td><b>Predicted 5' Start</b></td>
+          <td><b>5' Match?</b></td>
+          <td><b>Predicted 3' End</b></td>
+          <td><b>3' Match?</b></td>
+          <td><b>Consensus</b></td>
+        </tr>
+        {% for item in list %}
+        <tr>
+        	<td>{{ item.prot_id }}</td>
+        	<td>{{ item.ref_five }}</td>
+        	<td>{{ item.ref_three }}</td>
+        	<td>{{ item.pred_id }}</td>
+        	<td>{{ item.pred_five }}</td>
+        	<td>{{ item.pred_five_match }}</td>
+        	<td>{{ item.pred_three }}</td>
+        	<td>{{ item.pred_three_match }}</td>
+        	<td>{{ item.overall_match }}</td>
+        </tr>
+        {% endfor %}
+		</table>
+	</body>
+</html>
