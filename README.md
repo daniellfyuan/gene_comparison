@@ -15,4 +15,4 @@ are printed out (info such as # of ref genes, predicted genes, 5' matches, 3' ma
 no overlaps) before printing out the object numbers in a table. All 'None' entries are
 replaced with a dash for easier and less cluttered viewing.
 
-The file test.html is the output of the script, after it parsed and analyzed both the genbank file and the Glimmer3 output file.
+The file "test.html" is the output of the script, after it parsed and analyzed both the genbank file and the Glimmer3 output file.
